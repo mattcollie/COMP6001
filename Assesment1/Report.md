@@ -19,6 +19,8 @@ When formatting content the Do's and Don'ts guide says to "Create a layout that 
 When you have Touch Controls on the page the Do's and Don'ts guide says "Use UI elements that are designed for touch gestured to make interaction with your app feel easy and natural.". An example of this is to use a calander control instead of building a calander control via individual controls, the native control should be used because the funcitonality is compact and more efficient than building one itself.
 
 ### Hit Targets
+Hit Targets for example are buttons or interactive controls, the Do's and Don'ts guide tells us to "Create controls that measure at least 44 points x 44 points so they can be accurately tapped with a finger.". This sizing guide line directs us to create controls with an appropriate size so buttons can be clicked easily with a finger which is important when interacting with an application on a mobile device.
+
 
 
 
