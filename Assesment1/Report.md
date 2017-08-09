@@ -41,6 +41,10 @@ The organization of controls is important within an applicaiton, you want to kee
 ### Alignment
 Aligning controls and content in an easy-to-read layout, like organization this will influence how the user reads down the page. The Do's and Don'ts guide tells us "Align text, images, and buttons to show users how information is related.". You want to keep all related information together.
 
+# Peer Review
+Johnathon Proffitt
+This report has a strong focus on the layout of the GUI.
+It matches what I discovered in my own research, especially about the organization and the formatting.
 
 ---
 
