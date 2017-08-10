@@ -19,15 +19,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         controller = self
-        _color = ColorController.init(controller)
-        // Do any additional setup after loading the view, typically from a nib.
+        _color = ColorController.init(view: controller, red: Float(redSlider.value), green: Float(greenSlider.value), blue: Float(blueSlider.value))
+        
+        setSliderColors(slider: redSlider, color: UIColor.red)
+        setSliderColors(slider: greenSlider, color: UIColor.green)
+        setSliderColors(slider: blueSlider, color: UIColor.blue)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func redSlider_ValueChanged(_ sender: UISlider) {
         _color.Red = sender.value
     }
@@ -39,67 +42,9 @@ class ViewController: UIViewController {
     @IBAction func blueSlider_Changed(_ sender: UISlider) {
         _color.Blue = sender.value
     }
-}
-
-class ColorController {
     
-    private var _view:ViewController
-    private var _red:Float = 0
-    private var _green:Float = 0
-    private var _blue:Float = 0
-    private var _alpha:Float = 1
-    public var Red:Float {
-        get {
-            return _red
-        }
-        set(value) {
-            _red = value
-            _view.view.backgroundColor = Color
-        }
-    }
-    public var Green:Float {
-        get {
-            return _green
-        }
-        set(value) {
-            _green = value
-            _view.view.backgroundColor = Color
-        }
-    }
-    public var Blue:Float {
-        get {
-            return _blue
-        }
-        set(value) {
-            _blue = value
-            _view.view.backgroundColor = Color
-        }
-    }
-    public var Alpha:Float {
-        get {
-            return _alpha
-        }
-        set(value) {
-            _alpha = value
-            _view.view.backgroundColor = Color
-        }
-        
-    }
-    private var Color:UIColor {
-        get {
-            return UIColor(red: CGFloat(Red), green: CGFloat(Green), blue: CGFloat(Blue), alpha: CGFloat(Alpha))
-        }
-    }
-    
-    init(_ view:ViewController) {
-        _view = view
-    }
-    
-    init(view:ViewController, red:Float, green:Float, blue:Float, alpha:Float) {
-        self._view = view
-        self.Red = red
-        self.Green = green
-        self.Blue = blue
-        self.Alpha = alpha
+    private func setSliderColors(slider:UISlider, color:UIColor) {
+        slider.minimumTrackTintColor = color
+        slider.maximumTrackTintColor = color
     }
 }
