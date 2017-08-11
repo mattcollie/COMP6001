@@ -61,8 +61,8 @@ class ColorController {
     
     private func setColor() {
         _view.btnSetColour.backgroundColor = Color
-        
         _view.btnSetColour.setTitleColor(getContrastColour(), for: UIControlState.normal)
+        _view.btnSetColour.layer.borderColor = getContrastColour().cgColor
     }
     
     public func getContrastColour() -> UIColor {
