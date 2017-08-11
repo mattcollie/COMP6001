@@ -60,7 +60,32 @@ class ColorController {
     }
     
     private func setColor() {
-        _view.view.backgroundColor = Color
+        _view.btnSetColour.backgroundColor = Color
+        
+        _view.btnSetColour.setTitleColor(getContrastColour(), for: UIControlState.normal)
+    }
+    
+    public func getContrastColour() -> UIColor {
+        var d:Float = 0
+        let a:Float = 1 - ( 0.299 * (Red*255) + 0.587 * (Green*255) + 0.114 * (Blue*255))/255
+        if (a < 0.5) {
+            d = 0
+        }
+        else {
+            d = 1
+        }
+        let color:UIColor = UIColor(red: CGFloat(d), green: CGFloat(d), blue: CGFloat(d), alpha: CGFloat(1))
+        return color
+    }
+    
+    public func reset() {
+        _red = 1
+        _green = 1
+        _blue = 1
+        _view.btnSetColour.backgroundColor = Color
+        _view.redSlider.value = 1
+        _view.greenSlider.value = 1
+        _view.blueSlider.value = 1
     }
     
     init(_ view:ViewController) {

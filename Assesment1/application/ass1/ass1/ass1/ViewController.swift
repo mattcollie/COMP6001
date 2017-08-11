@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
+    @IBOutlet weak var btnSetColour: UIButton!
     
+    @IBOutlet weak var btnReset: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         controller = self
@@ -27,6 +29,20 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func btnSetColour_TouchUpInside(_ sender: Any) {
+        view.backgroundColor = _color.Color
+        
+        btnSetColour.setTitleColor(_color.getContrastColour(), for: UIControlState.normal)
+        btnReset.setTitleColor(_color.getContrastColour(), for: UIControlState.normal)
+
+    }
+    
+    @IBAction func btnReset_TouchUpInside(_ sender: Any) {
+        _color.reset()
+        view.backgroundColor = _color.Color
+        btnSetColour.setTitleColor(_color.getContrastColour(), for: UIControlState.normal)
+        btnReset.setTitleColor(_color.getContrastColour(), for: UIControlState.normal)    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
